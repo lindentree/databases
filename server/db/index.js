@@ -10,17 +10,28 @@ var dbConnection = mysql.createConnection({
   database: 'chat'
 });
 
-dbConnection.connect();
-
-dbConnection.query (sql, values, function(err) {
-  connection.end();
-  
-  if (err) {
-    throw err;
+dbConnection.connect(function(err) {
+  if (!err) {
+    console.log('Successful connection');
+  } else {
+    console.log('Error connecting');
   }
+  
 });
 
-dbConnection.end();
+// dbConnection.post();
+
+// dbConnection.get();
+
+// dbConnection.query (sql, values, function(err) {
+//     if (err) {
+//       throw err;
+//     }
+
+//     console.log(values);
+//   });
+
+// dbConnection.end();
 
 
 
